@@ -1,7 +1,4 @@
-import br.com.dio.desafio.dominio.Bootcamp;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Dev;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -16,6 +13,8 @@ public class Main {
         curso2.setTitulo("curso js");
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
+
+        Desafio desafio = new Desafio("Romano para Inteiro", "Converta de Romano para Inteiro", "java", "facil");
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
@@ -36,27 +35,38 @@ public class Main {
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
         devCamila.inscreverBootcamp(bootcamp);
+        devCamila.iniciarDesafio(desafio);
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
+        System.out.println("Desafios Iniciados Camila:" + devCamila.getDesafiosIniciados());
+
         devCamila.progredir();
         devCamila.progredir();
+        devCamila.completarDesafio(desafio);
         System.out.println("-");
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
+        System.out.println("Desafios Iniciados Camila:" + devCamila.getDesafiosIniciados());
+        System.out.println("Desafios Concluídos Camila:" + devCamila.getDesafiosConcluidos());
+
         System.out.println("XP:" + devCamila.calcularTotalXp());
 
         System.out.println("-------");
 
         Dev devJoao = new Dev();
-        devJoao.setNome("Joao");
+        devJoao.setNome("Neto");
         devJoao.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
+        System.out.println("Conteúdos Inscritos Neto:" + devNeto.getConteudosInscritos());
+        System.out.println("Desafios Iniciados Neto:" + devNeto.getDesafiosIniciados());
         devJoao.progredir();
         devJoao.progredir();
         devJoao.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println("Conteúdos Inscritos Neto:" + devNeto.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Neto:" + devNeto.getConteudosConcluidos());
+        System.out.println("Desafios Iniciados Neto:" + devNeto.getDesafiosIniciados());
+        System.out.println("Desafios Concluídos Neto:" + devNeto.getDesafiosConcluidos());
+
+        System.out.println("XP:" + devNeto.calcularTotalXp());
 
     }
 
